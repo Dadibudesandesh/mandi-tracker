@@ -1,0 +1,30 @@
+
+server:
+port: 8080
+
+spring:
+application:
+name: mandi-tracker-api
+
+datasource:
+url: ${DB_URL:jdbc:postgresql://localhost:5432/mandi_tracker}
+username: ${DB_USERNAME:postgres}
+password: ${DB_PASSWORD:Sandy}
+
+jpa:
+hibernate:
+ddl-auto: validate
+open-in-view: false
+properties:
+hibernate:
+format_sql: true
+
+management:
+endpoints:
+web:
+exposure:
+include: health,info
+
+mandi:
+data:
+api-key: ${DATA_GOV_API_KEY:}
